@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Car Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Bavaria</h1>
+
+<form action="/submit_order" method="post">
+    <label for="carModel">Choose a Car Model:</label>
+    <select id="carModel" name="carModel" required>
+        <option value="Toyota Prius">Toyota Prius</option>
+        <option value="Nissan Altima">Nissan Altima</option>
+        <option value="Audi A4">Audi A4</option>
+        <option value="Hyundai Sonata">Hyundai Sonata</option>
+        <option value="Volkswagen Golf">Volkswagen Golf</option>
+        <option value="Tesla Model 3">Tesla Model 3</option>
+        <option value="BMW X5">BMW X5</option>
+        <option value="Mercedes-Benz C-Class">Mercedes-Benz C-Class</option>
+        <option value="Ford Fusion">Ford Fusion</option>
+        <option value="Honda Accord">Honda Accord</option>
+        <option value="Ford Mustang">Ford Mustang</option>
+        <option value="Chevrolet Malibu">Chevrolet Malibu</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required>
+
+    <button type="submit">Submit Order</button>
+</form>
+<!-- Add the form for filtering by car volume -->
+<form action="/filter_cars" method="post">
+    <label for="carVolume">Filter by Car Volume:</label>
+    <input type="number" id="carVolume" name="carVolume" min="1">
+    <button type="submit">Filter Cars</button>
+</form>
+
+<form action="/sort_cars" method="get">
+    <label>Sort by ID:</label>
+    <button type="submit" name="sort" value="asc" class="link-button">Sort Asc</button>
+    <button type="submit" name="sort" value="desc" class="link-button">Sort Desc</button>
+</form>
+
+
+
+
+</body>
+</html>
